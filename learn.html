@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAVYA - Learn Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-logo">
+                    <h1 class="mb-0">RAVYA</h1>
+                    <p class="mb-0 tagline">Learn . Build . Connect</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/courses.html">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/learn.html">Build</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/connect.html">Connect</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li> -->
+                    <li class="nav-item"><a class="nav-link btn btn-signup ms-3" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Learning Section -->
+    <section class="learn-section">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <!-- Video Player Column -->
+                <div class="col-lg-9 mb-4 mb-lg-0">
+                    <div class="video-player-large">
+                        <img id="videoThumbnail" src="/images/image.png" alt="Video Thumbnail" class="video-large-thumbnail">
+                        <div class="video-large-controls">
+                            <button class="control-btn-large" id="playBtnLarge">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lesson Info -->
+                    <div class="lesson-info mt-4">
+                        <h2 id="lessonTitle" class="lesson-title">Introduction to Business Fundamentals</h2>
+                        <div class="lesson-meta">
+                            <span class="meta-badge">
+                                <strong>Instructor:</strong> 
+                                <span id="instructorName">Sarah Johnson</span>
+                            </span>
+                            <span class="meta-badge">
+                                <strong>Duration:</strong> 
+                                <span id="lessonDuration">45 minutes</span>
+                            </span>
+                            <span class="meta-badge">
+                                <strong>Level:</strong> 
+                                <span id="lessonLevel">Beginner</span>
+                            </span>
+                        </div>
+                        <p id="lessonDescription" class="lesson-description mt-3">
+                            Learn the fundamentals of business in this comprehensive introductory course. We'll cover key concepts that every entrepreneur should know.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Classes Sidebar -->
+                <div class="col-lg-3">
+                    <div class="classes-sidebar">
+                        <h3 class="classes-title">Course Classes</h3>
+                        <div id="classesList" class="classes-list">
+                            <!-- Classes will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/learn.js"></script>
+</body>
+</html>

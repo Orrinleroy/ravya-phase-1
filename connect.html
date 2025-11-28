@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAVYA - Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-logo">
+                    <h1 class="mb-0">RAVYA</h1>
+                    <p class="mb-0 tagline">Learn . Build . Connect</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/courses.html">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/learn.html">Build</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/connect.html">Connect</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li> -->
+                    <li class="nav-item"><a class="nav-link btn btn-signup ms-3" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Connect Header Section -->
+    <section class="connect-header">
+        <div class="container-fluid px-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="page-title">Connect & Collaborate</h2>
+                    <p class="page-subtitle">Discover products and services from fellow entrepreneurs and business leaders</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <button class="btn btn-signup" data-bs-toggle="modal" data-bs-target="#postModal">
+                        + Post Your Item
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container-fluid px-5">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="product">Products</button>
+                <button class="category-btn" data-category="service">Services</button>
+                <button class="category-btn" data-category="consulting">Consulting</button>
+                <button class="category-btn" data-category="other">Other</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Feed Section -->
+    <section class="connect-feed">
+        <div class="container-fluid px-5">
+            <div class="row g-4" id="feedContainer">
+                <!-- Feed items will be populated here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Modal -->
+    <div class="modal fade" id="postModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content post-modal-content">
+                <div class="modal-header post-modal-header">
+                    <h5 class="modal-title">Post Your Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="postForm">
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control post-input" id="itemName" placeholder="Enter item name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemCategory" class="form-label">Category</label>
+                            <select class="form-select post-input" id="itemCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="product">Product</option>
+                                <option value="service">Service</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDescription" class="form-label">Description</label>
+                            <textarea class="form-control post-input" id="itemDescription" rows="4" placeholder="Describe your item" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemPrice" class="form-label">Price/Rate (Optional)</label>
+                            <input type="text" class="form-control post-input" id="itemPrice" placeholder="e.g., $99 or $50/hour">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="providerName" class="form-label">Your Name</label>
+                                <input type="text" class="form-control post-input" id="providerName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="providerEmail" class="form-label">Your Email</label>
+                                <input type="email" class="form-control post-input" id="providerEmail" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="providerPhone" class="form-label">Your Phone</label>
+                                <input type="tel" class="form-control post-input" id="providerPhone" placeholder="Enter your phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="providerLinkedin" class="form-label">LinkedIn Profile (Optional)</label>
+                                <input type="url" class="form-control post-input" id="providerLinkedin" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer post-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-signup" id="submitPostBtn">Post Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Details Modal -->
+    <div class="modal fade" id="itemDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content item-modal-content">
+                <div class="modal-header item-modal-header">
+                    <h5 class="modal-title" id="modalItemTitle">Item Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="item-details-wrapper">
+                        <div class="item-details-top">
+                            <div class="item-category-badge" id="modalItemCategory">Category</div>
+                            <h3 id="modalItemName">Item Name</h3>
+                            <div class="item-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">(Verified Provider)</span>
+                            </div>
+                        </div>
+
+                        <div class="item-details-section">
+                            <h6 class="section-title">Description</h6>
+                            <p id="modalItemDescription">Item description goes here</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="item-details-section">
+                                    <h6 class="section-title">Price/Rate</h6>
+                                    <p id="modalItemPrice" class="price-highlight">Contact for pricing</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="item-details-section">
+                                    <h6 class="section-title">Availability</h6>
+                                    <p>Available Now</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-details-section">
+                            <h6 class="section-title">Provider Information</h6>
+                            <div class="provider-card">
+                                <div class="provider-info">
+                                    <div class="provider-avatar" id="modalProviderAvatar">A</div>
+                                    <div class="provider-details">
+                                        <h5 id="modalProviderName">Provider Name</h5>
+                                        <p id="modalProviderEmail">provider@email.com</p>
+                                        <div class="provider-contacts">
+                                            <span id="modalProviderPhone" class="contact-badge">
+                                                📞 Phone
+                                            </span>
+                                            <span id="modalProviderLinkedin" class="contact-badge">
+                                                🔗 LinkedIn
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer item-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" id="contactProviderBtn" class="btn btn-signup">Contact Provider</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/connect.js"></script>
+</body>
+</html>
